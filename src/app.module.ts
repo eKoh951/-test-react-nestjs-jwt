@@ -16,11 +16,9 @@ import { AppService } from './app.service';
 })
 export class AppModule implements NestModule {
   configure(consumer: MiddlewareConsumer) {
-    consumer
-      .apply(ValidateAccessToken)
-      .forRoutes(
-        { path: 'public', method: RequestMethod.GET },
-        { path: 'private', method: RequestMethod.GET },
-      );
+    consumer.apply(ValidateAccessToken).forRoutes(
+      // { path: 'public', method: RequestMethod.GET },
+      { path: 'private', method: RequestMethod.GET },
+    );
   }
 }
