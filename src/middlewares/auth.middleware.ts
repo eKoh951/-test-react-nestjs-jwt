@@ -7,7 +7,7 @@ export class ValidateAccessToken implements NestMiddleware {
   use(req: Request, res: Response, next: NextFunction) {
     auth({
       issuerBaseURL: `https://asure.us.auth0.com`,
-      audience: 'https://asure.us.auth0.com/api/v2',
+      audience: 'nestjs-api',
     })(req, res, next);
   }
 }
