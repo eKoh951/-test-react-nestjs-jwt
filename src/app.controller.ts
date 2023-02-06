@@ -7,12 +7,16 @@ export class AppController {
   constructor(private readonly appService: AppService) {}
 
   @Get('/public')
-  getPublic(): string {
-    return 'This is public';
+  getPublic(): any {
+    return {
+      message: 'This is public',
+    };
   }
 
   @Get('/private')
-  getPriv(): string {
-    return 'This is private';
+  getPriv(): any {
+    return {
+      message: 'This is private',
+    };
   }
 }
