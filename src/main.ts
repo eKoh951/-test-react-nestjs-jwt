@@ -4,7 +4,7 @@ import { auth } from 'express-oauth2-jwt-bearer';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule, {
-    cors: false,
+    cors: { origin: 'http://127.0.0.1:5173' },
   });
   app.enableCors();
   app.use(
