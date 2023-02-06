@@ -12,7 +12,6 @@ async function bootstrap() {
       issuer: 'asure.us.auth0.com',
       audience: 'https://asure.us.auth0.com/api/v2/',
       secret: 'dawdawdawd, dokpawdad awd ad',
-      tokenSigningAlg: 'HS256',
     }),
   );
   await app.listen(3000);
