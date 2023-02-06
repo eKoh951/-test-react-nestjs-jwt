@@ -1,5 +1,5 @@
-import { Controller, Get, UseGuards } from '@nestjs/common';
-import { AuthGuard } from './guards/auth-guard';
+import { Controller, Get, Req } from '@nestjs/common';
+import type { Request } from 'express';
 import { AppService } from './app.service';
 
 @Controller()
@@ -7,11 +7,12 @@ export class AppController {
   constructor(private readonly appService: AppService) {}
 
   @Get('/public')
-  getPublic(): string {
+  getPublic(@Req() req: Request): string {
+    console.log(req.auth.token);
+
     return 'This is public';
   }
 
-  @UseGuards(AuthGuard)
   @Get('/private')
   getPriv(): string {
     return 'This is private';
