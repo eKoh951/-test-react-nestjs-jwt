@@ -5,7 +5,7 @@ import {
   RequestMethod,
 } from '@nestjs/common';
 import { ValidateAccessToken } from './middlewares/auth.middleware';
-import { CorsMiddleware } from './middlewares/cors.middleware';
+// import { CorsMiddleware } from './middlewares/cors.middleware';
 import { PassportModule } from '@nestjs/passport';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
@@ -20,6 +20,6 @@ export class AppModule implements NestModule {
     consumer
       .apply(ValidateAccessToken)
       .forRoutes({ path: 'private', method: RequestMethod.GET });
-    consumer.apply(CorsMiddleware).forRoutes('*');
+    // consumer.apply(CorsMiddleware).forRoutes('*');
   }
 }
