@@ -12,10 +12,10 @@
       "dest": "src/main.ts",
       "methods": ["GET"],
       "headers": {
-        "Access-Control-Allow-Credentials": "false",
+        "Access-Control-Allow-Credentials": "true",
         "Access-Control-Allow-Origin": "*",
         "Access-Control-Allow-Methods": "GET,POST",
-        "Access-Control-Allow-Headers": "Authorization"
+        "Access-Control-Allow-Headers": "X-CSRF-Token, Accept, Content-Length, Content-Type, Authorization"
       }
     }
   ]
